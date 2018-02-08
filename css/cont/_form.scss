@@ -29,13 +29,14 @@
         outline: 0;
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
       }
-      &.submit{
+      &.confirm{
         background-color: #111;
         color: #fff;
         font-size: 1.4rem;
         font-weight: bold;
         letter-spacing: 0.8rem;
         text-indent: 0.8rem;
+        text-transform: uppercase;
         width: 60%;
         min-width: 150px;
         transition: .3s;

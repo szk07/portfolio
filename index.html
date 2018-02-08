@@ -70,24 +70,31 @@
    <h2>Contact</h2>
    <form action="#" method="post">
     <dl>
-     <dt>name</dt>
-     <dd><input type="text" name="myname" required></dd>
+     <dt>Name</dt>
+     <dd><input type="text" name="Name" required value="test"></dd>
+     <!-- <dd><input type="text" name="Name" required></dd> -->
     </dl>
     <dl>
      <dt>Email</dt>
-     <dd><input type="email" name="mail" required></dd>
+     <dd><input type="email" name="Email" required value="test@aa"></dd>
+     <!-- <dd><input type="email" name="Email" required></dd> -->
     </dl>
     <dl>
      <dt>Message</dt>
-     <dd><textarea name="msg" required></textarea></dd>
+     <dd><textarea name="Message" required>sample text.</textarea></dd>
+     <!-- <dd><textarea name="Message" required></textarea></dd> -->
     </dl>
     <dl>
-     <input type="button" class="submit off" value="SEND" disabled>
+     <input type="button" class="confirm off" value="confirm" disabled>
     </dl>
    </form>
    <div class="overlay">
     <div id="contactModal">
      <p>以下の内容でよろしければ「送信」ボタンを押してください。</p>
+     <div class="formAction">
+      <input type="button" class="close" value="修正">
+      <input type="submit" class="submit" value="送信">
+     </div>
     </div>
    </div>
   </section>

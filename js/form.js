@@ -1,7 +1,9 @@
 $(function(){
  var formArea = $('#contact input, #contact textarea');
- var $submit = $('input.submit');
+ var formAry;
+ var mail = 'Email';
  var mailCheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+ var $confirm = $('input.confirm');
 
  formArea.blur(function(){
   //formArea判定
@@ -10,17 +12,17 @@ $(function(){
   if(!$val){
    var ms = '必須項目です。';
    addError($dl, ms);
-  }else if($(this).attr('name')=='mail' && !$val.match(mailCheck)){
+  }else if($(this).attr('name')==mail && !$val.match(mailCheck)){
    var ms = 'アドレスの形式が正しくありません。';
    addError($dl, ms);
   }else{
    rmError($dl);
   }
   //submit判定
-  var formAry = formArea.serializeArray();
   var flg = true;
+  formAry = formArea.serializeArray();
   for(i=0; i<formAry.length; i++){
-   if(!formAry[i].value || (formAry[i]['name']=='mail' && !formAry[i].value.match(mailCheck))){
+   if(!formAry[i].value || (formAry[i]['name']==mail && !formAry[i].value.match(mailCheck))){
     flg = false;
    }
   }
@@ -46,16 +48,21 @@ $(function(){
  }
  //confirm処理
  function valid(){
-  $submit.removeClass('off');
-  $submit.prop('disabled', false);
+  $confirm.removeClass('off');
+  $confirm.prop('disabled', false);
  }
  function invalid(){
-  $submit.addClass('off');
-  $submit.prop('disabled', true);
+  $confirm.addClass('off');
+  $confirm.prop('disabled', true);
  }
 
  //confirmモーダル処理
- $('#contact form .submit').on('click', function(event){
+ $('#contact form .confirm').on('click', function(event){
+  $('#contactModal').children('dl').remove();
+  for(var i=0; i<formAry.length; i++){
+   $('#contactModal .formAction')
+    .before('<dl><dt>'+formAry[i]['name']+'</dt><dd>'+formAry[i]['value']+'</dd></dl>');
+  }
   $('.overlay').fadeIn(300);
  });
 });
