@@ -46,6 +46,7 @@ $(function(){
   $dl.removeClass('error');
   $dl.find('span').remove();
  }
+
  //confirm処理
  function valid(){
   $confirm.removeClass('off');
@@ -55,7 +56,6 @@ $(function(){
   $confirm.addClass('off');
   $confirm.prop('disabled', true);
  }
-
  //confirmモーダル処理
  $('#contact form .confirm').on('click', function(event){
   $('#contactModal').children('dl').remove();
@@ -64,5 +64,10 @@ $(function(){
     .before('<dl><dt>'+formAry[i]['name']+'</dt><dd>'+formAry[i]['value']+'</dd></dl>');
   }
   $('.overlay').fadeIn(300);
+ });
+
+ //submit処理
+ $('#contactModal .submit').on('click', function(event){
+  $('#contact form').submit();
  });
 });
