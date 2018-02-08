@@ -44,7 +44,7 @@ $(function(){
   $dl.removeClass('error');
   $dl.find('span').remove();
  }
- //submit処理
+ //confirm処理
  function valid(){
   $submit.removeClass('off');
   $submit.prop('disabled', false);
@@ -53,4 +53,9 @@ $(function(){
   $submit.addClass('off');
   $submit.prop('disabled', true);
  }
+
+ //confirmモーダル処理
+ $('#contact form .submit').on('click', function(event){
+  $('.overlay').fadeIn(300);
+ });
 });
