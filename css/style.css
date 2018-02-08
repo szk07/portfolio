@@ -1,0 +1,381 @@
+html {
+		box-sizing: border-box;
+		color: #111;
+		font-size: 62.5%;
+		margin: 0;
+		padding: 0;
+}
+
+html::before, html::after, body::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		border: solid #fff;
+		border-width: 15px 0 0;
+		z-index: 10;
+}
+
+html::after {
+		top: auto;
+		bottom: 0;
+		border-width: 0 0 15px;
+}
+
+body::before {
+		bottom: 0;
+		border-width: 0 15px 0;
+		z-index: -1;
+}
+
+@media (min-width: 800px) {
+		html::before, html::after, body::before {
+				border-width: 20px 0 0;
+		}
+		html::after {
+				border-width: 0 0 20px;
+		}
+		body::before {
+				border-width: 0 20px 0;
+		}
+}
+
+body {
+		background: #f6f6f6;
+		background-image: url(../imgs/bg.png);
+		font-size: 1.6rem;
+		margin: 15px;
+		height: 100%;
+}
+
+@media (min-width: 800px) {
+		body {
+				margin: 20px;
+		}
+}
+
+.bk-white {
+		position: relative;
+		background: #fff;
+		border-top: none;
+		margin: 80px 0;
+		padding: 20px 0 30px;
+}
+
+@media (min-width: 800px) {
+		.bk-white {
+				padding: 50px 0 80px;
+		}
+}
+
+.bk-white::before, .bk-white::after {
+		content: '';
+		position: absolute;
+		top: -80px;
+		display: block;
+		background-image: linear-gradient(to bottom right, rgba(246, 246, 246, 0), rgba(246, 246, 246, 0) 49.5%, #fff 50%, #fff);
+		width: 100%;
+		height: 80px;
+}
+
+.bk-white::after {
+		position: absolute;
+		top: auto;
+		bottom: -80px;
+		transform: rotate(180deg);
+}
+
+.bk-white + section {
+		border-top: none;
+}
+
+h1 {
+		font-size: 5rem;
+		font-weight: 300;
+		margin: 0;
+}
+
+h2 {
+		font-size: 5rem;
+		font-weight: 300;
+		text-align: center;
+}
+
+a {
+		color: #111;
+		text-decoration: none;
+		transition: .3s;
+}
+
+a:hover {
+		color: #888;
+}
+
+a.btn {
+		display: inline-block;
+		box-sizing: border-box;
+		border: 1px solid #111;
+		padding: 10px 30px;
+}
+
+a.btn:hover {
+		background: #111;
+		color: #fff;
+}
+
+.txt-c {
+		text-align: center;
+}
+
+.clear::after {
+		content: '';
+		display: block;
+		clear: both;
+}
+
+/* Contents */
+header {
+		position: relative;
+		width: 100%;
+		min-height: 300px;
+}
+
+header #head {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 45%;
+}
+
+nav {
+		margin: 20px 0;
+}
+
+nav ul {
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+}
+
+nav ul li {
+		margin: 0 20px;
+}
+
+nav a {
+		position: relative;
+		font-size: 1.4rem;
+		letter-spacing: .1rem;
+		padding: 8px 0;
+}
+
+nav a::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		background: #bbb;
+		height: 1px;
+		width: 2rem;
+		transform: translateX(-50%);
+		transition: .3s;
+}
+
+nav a:hover::before {
+		width: 5rem;
+}
+
+main {
+		box-sizing: border-box;
+}
+
+main section {
+		border-top: 30px solid #fff;
+		min-height: 200px;
+		padding: 15px;
+}
+
+@media (min-width: 800px) {
+		main section {
+				padding: 30px;
+		}
+}
+
+#about .prof {
+		width: 60%;
+		margin: 0 auto;
+}
+
+#works .archives {
+		display: flex;
+		-webkit-flex-direction: column;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 90%;
+		max-width: 1250px;
+		margin: 30px auto 50px;
+}
+
+#works .archives article {
+		border: 6px solid #fff;
+		box-sizing: border-box;
+		margin: 10px 0;
+}
+
+#works .archives article:first-child {
+		margin-left: 0;
+}
+
+#works .archives article:last-child {
+		margin-right: 0;
+}
+
+#works .archives article img {
+		width: 100%;
+}
+
+#works .more {
+		display: block;
+		text-align: center;
+		margin: 30px 0 50px;
+}
+
+#works .more i {
+		padding-right: 8px;
+}
+
+@media (min-width: 800px) {
+		#works .archives {
+				-webkit-flex-direction: row;
+				flex-direction: row;
+		}
+		#works .archives article {
+				max-width: 400px;
+				margin: 0 1%;
+		}
+}
+
+footer {
+		display: block;
+		width: 100%;
+		min-height: 50px;
+		text-align: center;
+}
+
+footer small {
+		color: #666;
+		font-size: 1.2rem;
+}
+
+#contact form {
+		display: block;
+		width: 90%;
+		margin: 0 auto;
+}
+
+#contact form dl {
+		margin: 10px 0px;
+}
+
+#contact form dl dt {
+		position: relative;
+		font-size: 1.2rem;
+		font-weight: bold;
+}
+
+#contact form dl dd {
+		margin: 0;
+}
+
+#contact form dl:last-child {
+		text-align: center;
+		margin: 16px 0;
+}
+
+#contact form input, #contact form textarea {
+		background: none;
+		background-color: rgba(0, 0, 0, 0.1);
+		box-sizing: border-box;
+		border: none;
+		width: 100%;
+		padding: 14px;
+}
+
+#contact form input:focus, #contact form textarea:focus {
+		outline: 0;
+		box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
+}
+
+#contact form input.submit, #contact form textarea.submit {
+		background-color: #111;
+		color: #fff;
+		font-size: 1.4rem;
+		font-weight: bold;
+		letter-spacing: 0.8rem;
+		text-indent: 0.8rem;
+		width: 60%;
+		min-width: 150px;
+		transition: .3s;
+		cursor: pointer;
+}
+
+#contact form input.submit.off, #contact form textarea.submit.off {
+		background-color: rgba(17, 17, 17, 0.6);
+		cursor: default;
+}
+
+#contact form input.submit:not(.off):hover, #contact form textarea.submit:not(.off):hover {
+		background-color: rgba(17, 17, 17, 0.9);
+}
+
+#contact form textarea {
+		min-height: 180px;
+		overflow: auto;
+}
+
+@media (min-width: 800px) {
+		#contact form {
+				width: 80%;
+				max-width: 600px;
+		}
+		#contact form dl:last-child {
+				margin: 30px 0 10px;
+		}
+}
+
+#contact .error {
+		color: #c7000a;
+}
+
+#contact .error input, #contact .error form textarea, #contact form .error textarea, #contact .error textarea {
+		background-color: rgba(200, 0, 10, 0.1);
+}
+
+#contact .error input:focus, #contact .error form textarea:focus, #contact form .error textarea:focus, #contact .error textarea:focus {
+		box-shadow: 0 0 6px rgba(200, 0, 10, 0.2) inset;
+}
+
+#contact .error span {
+		display: none;
+		position: absolute;
+		right: 12px;
+		bottom: 0;
+		background: rgba(200, 0, 10, 0.8);
+		color: #fff;
+		padding: 8px 10px 8px 14px;
+		z-index: 1;
+}
+
+#contact .error span::after {
+		content: '';
+		position: absolute;
+		right: 30px;
+		bottom: -6px;
+		border-color: rgba(200, 0, 10, 0.8) transparent;
+		border-style: solid;
+		border-width: 6px 6px 0 6px;
+}

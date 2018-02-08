@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Portfolio</title>
+ <link rel="stylesheet" href="css/style.css">
+ <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+ <header>
+  <div id="head">
+   <h1>Portfolio</h1>
+   <nav>
+    <ul>
+     <li><a href="#about">About</a></li>
+     <li><a href="#works">Works</a></li>
+     <li><a href="#contact">Contact</a></li>
+    </ul>
+   </nav>
+   <p>2018</p>
+   <p>Thanks for visiting.</p>
+  </div>
+ </header>
+ <main>
+  <section id="about" class="bk-white">
+   <h2>About</h2>
+   <div class="prof">
+    <p class="name">Ogino Shizuka</p>
+    <p>コーディングと登山が好き。にわとりをこよなく愛す。</p>
+    <p class="bio">平成生まれ。中学生の頃にブラウザゲームがきっかけでwebに興味を持つ。<br>
+     2012年から3年半愛知のweb制作会社でコーディングや制作等の業務を行う。<br>
+     2016年10月からoff-JTを行い、JavascriptやPHPなどのプログラミング言語を学習。</p>
+   </div>
+   <!-- <div class="skill">
+    HTML/CSS/SASS/JavaScript/jQuery/PHP<br>
+    Atom/Figma/Photoshop/Illustrator/Git<br>
+    Wordpress/MovableType
+   </div> -->
+  </section>
+  <section id="works">
+   <h2>Works</h2>
+   <p class="txt-c">
+    今まで制作・携わったものです。<br>
+    非公開クライアントワークの閲覧にはログインが必要です。
+   </p>
+   <div class="archives">
+    <article>
+     <a href="#">
+      <img src="imgs/sample.png" alt="">
+     </a>
+    </article>
+    <article>
+     <a href="#">
+      <img src="imgs/works/02upword.jpg" alt="">
+     </a>
+    </article>
+    <article>
+     <a href="#">
+      <img src="imgs/sample.png" alt="">
+     </a>
+    </article>
+   </div>
+   <div class="more">
+    <a href="#" class="btn">
+     <i class="fa fa-lock" aria-hidden="true"></i>Client work.
+    </a>
+   </div>
+  </section>
+  <section id="contact">
+   <h2>Contact</h2>
+   <form action="#" method="post">
+    <dl>
+     <dt>name</dt>
+     <dd><input type="text" name="myname" required></dd>
+    </dl>
+    <dl>
+     <dt>Email</dt>
+     <dd><input type="email" name="mail" required></dd>
+    </dl>
+    <dl>
+     <dt>Message</dt>
+     <dd><textarea name="msg" required></textarea></dd>
+    </dl>
+    <dl>
+     <input type="submit" class="submit off" value="SEND" disabled>
+    </dl>
+   </form>
+  </section>
+ </main>
+ <footer>
+  <p><small>&copy; Shizuka Ogino</small></p>
+ </footer>
+ <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+ <script src="js/script.js"></script>
+ <script src="js/form.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+// Expanded
+@charset "UTF-8";
+
+$mediaQuery-tb: 800px;
+$mediaQuery-pc: 1000px;
+@mixin font-head{
+ font-size: 5rem;
+ font-weight: 300;
+}
+
+@import "set/mixin";
+@import "set/base";
+
+/* Contents */
+@import "cont/contents";
+@import "cont/form";
