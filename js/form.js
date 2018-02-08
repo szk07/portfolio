@@ -32,6 +32,20 @@ $(function(){
    invalid();
   }
  });
+ $('#contact textarea').keyup(function(){
+  var flg = true;
+  formAry = formArea.serializeArray();
+  for(i=0; i<formAry.length; i++){
+   if(!formAry[i].value || (formAry[i]['name']==mail && !formAry[i].value.match(mailCheck))){
+    flg = false;
+   }
+  }
+  if(flg === true){
+   valid();
+  }else{
+   invalid();
+  }
+ });
 
  //formArea処理
  function addError($dl, ms){
