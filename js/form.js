@@ -67,7 +67,25 @@ $(function(){
  });
 
  //submit処理
- $('#contactModal .submit').on('click', function(event){
+ $('#contactModal .submit').click(function(){
   $('#contact form').submit();
  });
+ //submit後の表示位置
+ var windowPosition = function(){
+  var wp;
+  windowPosition = sessionStorage.getItem('wp');
+  windowPosition = window.sessionStorage.getItem('wp');
+  windowPosition = sessionStorage.windowPosition;
+
+  $(window).scrollTop(windowPosition);
+  sessionStorage.clear();
+  window.sessionStorage.clear();
+
+  $('#contactModal .submit').click(function(){
+   windowPosition = $(window).scrollTop();
+   sessionStorage.setItem('wp', windowPosition);
+   window.sessionStorage.setItem('wp', windowPosition);
+   sessionStorage.windowPosition = windowPosition;
+  });
+ }();
 });
