@@ -5,8 +5,8 @@ $(function(){
  var mailCheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
  var $confirm = $('input.confirm');
 
+ //Error判定
  formArea.blur(function(){
-  //formArea判定
   var $val = $(this).val();
   var $dl = $(this).parents('dl');
   if(!$val){
@@ -18,21 +18,9 @@ $(function(){
   }else{
    rmError($dl);
   }
-  //submit判定
-  var flg = true;
-  formAry = formArea.serializeArray();
-  for(i=0; i<formAry.length; i++){
-   if(!formAry[i].value || (formAry[i]['name']==mail && !formAry[i].value.match(mailCheck))){
-    flg = false;
-   }
-  }
-  if(flg === true){
-   valid();
-  }else{
-   invalid();
-  }
  });
- $('#contact textarea').keyup(function(){
+ //submit判定
+ formArea.keyup(function(){
   var flg = true;
   formAry = formArea.serializeArray();
   for(i=0; i<formAry.length; i++){
@@ -41,6 +29,7 @@ $(function(){
    }
   }
   if(flg === true){
+   rmError($(this).parents('dl'));
    valid();
   }else{
    invalid();
@@ -60,7 +49,6 @@ $(function(){
   $dl.removeClass('error');
   $dl.find('span').remove();
  }
-
  //confirm処理
  function valid(){
   $confirm.removeClass('off');
@@ -79,12 +67,12 @@ $(function(){
   }
   $('.overlay').fadeIn(300);
  });
-
  //submit処理
  $('#contactModal .submit').click(function(){
   $('#contact form').submit();
  });
- //submit後の表示位置
+
+ //submit後のスクロール位置調整
  var windowPosition = function(){
   var wp;
   windowPosition = sessionStorage.getItem('wp');
