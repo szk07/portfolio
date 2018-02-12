@@ -301,6 +301,8 @@ footer small {
 		background-color: rgba(0, 0, 0, 0.1);
 		box-sizing: border-box;
 		border: none;
+		font-size: 1.6rem;
+		font-weight: 300;
 		width: 100%;
 		padding: 14px;
 }

@@ -1,95 +1,97 @@
 #contact{
-  form{
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-    dl{
-      margin: 10px 0px;
-      dt{
-       position: relative;
-       font-size: 1.2rem;
-       font-weight: bold;
-      }
-      dd{
-        margin: 0;
-      }
-      &:last-child{
-        text-align: center;
-        margin: 16px 0;
-      }
-    }
-    input{
-      background: none;
-      background-color: rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
-      border: none;
-      width: 100%;
-      padding: 14px;
-      &:focus{
-        outline: 0;
-        box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
-      }
-      &.confirm{
-        background-color: #111;
-        color: #fff;
-        font-size: 1.4rem;
-        font-weight: bold;
-        letter-spacing: 0.8rem;
-        text-indent: 0.8rem;
-        text-transform: uppercase;
-        width: 60%;
-        min-width: 150px;
-        transition: .3s;
-        cursor: pointer;
-        &.off{
-         background-color: rgba(17, 17, 17, 0.6);
-         cursor: default;
-        }
-        &:not(.off):hover{
-          background-color: rgba(17, 17, 17, 0.9);
-        }
-      }
-    }
-    textarea{
-      @extend input;
-      min-height: 180px;
-      overflow: auto;
-    }
-    @include mq-min($mediaQuery-tb){
-      width: 80%;
-      max-width: 600px;
-      dl:last-child{
-        margin: 30px 0 10px;
-      }
-    }
+ form{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  dl{
+   margin: 10px 0px;
+   dt{
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: bold;
+   }
+   dd{
+    margin: 0;
+   }
+   &:last-child{
+    text-align: center;
+    margin: 16px 0;
+   }
   }
-  $spanColor: rgba(200, 0, 10, .8);
-  .error{
-    color: #c7000a;
-    input, textarea{
-      background-color: rgba(200, 0, 10, 0.1);
-      &:focus{
-        box-shadow: 0 0 6px rgba(200, 0, 10, 0.2) inset;
-      }
+  input{
+   background: none;
+   background-color: rgba(0, 0, 0, 0.1);
+   box-sizing: border-box;
+   border: none;
+   font-size: 1.6rem;
+   font-weight: 300;
+   width: 100%;
+   padding: 14px;
+   &:focus{
+    outline: 0;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
+   }
+   &.confirm{
+    background-color: #111;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.8rem;
+    text-indent: 0.8rem;
+    text-transform: uppercase;
+    width: 60%;
+    min-width: 150px;
+    transition: .3s;
+    cursor: pointer;
+    &.off{
+     background-color: rgba(17, 17, 17, 0.6);
+     cursor: default;
     }
-    span{
-     display: none;
-     position: absolute;
-     right: 12px;
-     bottom: 0;
-     background: $spanColor;
-     color: #fff;
-     padding: 8px 10px 8px 14px;
-     z-index: 1;
-     &::after{
-      content: '';
-      position: absolute;
-      right: 30px;
-      bottom: -6px;
-      border-color: $spanColor transparent;
-      border-style: solid;
-      border-width: 6px 6px 0 6px;
-     }
+    &:not(.off):hover{
+     background-color: rgba(17, 17, 17, 0.9);
     }
+   }
   }
+  textarea{
+   @extend input;
+   min-height: 180px;
+   overflow: auto;
+  }
+  @include mq-min($mediaQuery-tb){
+   width: 80%;
+   max-width: 600px;
+   dl:last-child{
+    margin: 30px 0 10px;
+   }
+  }
+ }
+ $spanColor: rgba(200, 0, 10, .8);
+ .error{
+  color: #c7000a;
+  input, textarea{
+   background-color: rgba(200, 0, 10, 0.1);
+   &:focus{
+    box-shadow: 0 0 6px rgba(200, 0, 10, 0.2) inset;
+   }
+  }
+  span{
+   display: none;
+   position: absolute;
+   right: 12px;
+   bottom: 0;
+   background: $spanColor;
+   color: #fff;
+   padding: 8px 10px 8px 14px;
+   z-index: 1;
+   &::after{
+    content: '';
+    position: absolute;
+    right: 30px;
+    bottom: -6px;
+    border-color: $spanColor transparent;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+   }
+  }
+ }
 }
