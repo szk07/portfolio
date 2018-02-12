@@ -29,7 +29,9 @@ $(function(){
  });
  function closeModal(){
   $('.overlay').animate({ opacity: 0 }, 300, function(){
+   $(window).off('touchmove.noscroll');
    $('.overlay').scrollTop(0).hide().removeAttr('style');
+   $('html, body').removeAttr('style');
   });
  }
 });
