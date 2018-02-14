@@ -61,7 +61,10 @@ $(function(){
  }
 
  //confirmモーダル処理
- var curScroll;
+ var touchStart;
+ $(window).on('touchstart', function(event) {
+  touchStart = event.originalEvent.changedTouches[0].screenY;
+ });
  $('#contact form .confirm').on('click', function(event){
   $('#contactModal').children('dl').remove();
   for(var i=0; i<formAry.length; i++){
@@ -69,7 +72,15 @@ $(function(){
     .before('<dl><dt>'+formAry[i]['name']+'</dt><dd>'+formAry[i]['value']+'</dd></dl>');
   }
   //スクロール処理
-  curScroll = $(window).scrollTop();
+  $(window).on('touchmove.noscroll', function(event){
+   var current_y = event.originalEvent.changedTouches[0].screenY,
+       height = $('.overlay').outerHeight(),
+       is_top = touch_start_y <= current_y && $('.overlay')[0].scrollTop === 0,
+       is_bottom = touch_start_y >= current_y && $('.overlay')[0].scrollHeight - $('.overlay')[0].scrollTop === height;
+   if(is_top || is_bottom){
+    event.preventDefault();
+   }
+  });
   $('html, body').css('overflow', 'hidden');
   $('.overlay').fadeIn(300);
  });
