@@ -117,3 +117,10 @@ a{
  display: block;
  clear: both;
 }
+
+br.sp{
+ display: inline;
+ @include mq-min($mediaQuery-tb){
+  display: none;
+ };
+}

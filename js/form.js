@@ -68,8 +68,13 @@ $(function(){
  $('#contact form .confirm').on('click', function(event){
   $('#contactModal').children('dl').remove();
   for(var i=0; i<formAry.length; i++){
+   var formName = formAry[i]['name'];
+   var formVal = formAry[i]['value'];
+   if(formName === 'Message'){
+    formVal = formVal.replace(/\r?\n/g, '<br>');
+   }
    $('#contactModal .formAction')
-    .before('<dl><dt>'+formAry[i]['name']+'</dt><dd>'+formAry[i]['value']+'</dd></dl>');
+    .before('<dl><dt>'+formName+'</dt><dd>'+formVal+'</dd></dl>');
   }
   //スクロール処理
   $(window).on('touchmove.noscroll', function(event){
