@@ -61,27 +61,15 @@ $(function(){
  }
 
  //confirmモーダル処理
- var thouch;
- $(window).on('touchstart', function(){
-  thouch = event.originalEvent.changedTouches[0].screenY;
- });
+ var curScroll;
  $('#contact form .confirm').on('click', function(event){
   $('#contactModal').children('dl').remove();
   for(var i=0; i<formAry.length; i++){
    $('#contactModal .formAction')
     .before('<dl><dt>'+formAry[i]['name']+'</dt><dd>'+formAry[i]['value']+'</dd></dl>');
   }
-  //iOS用スクロール処理
-  $(window).on('touchmove.noscroll', function(event){
-   var current = event.originalEvent.changedTouches[0].screenY,
-       height = $('.overlay').outerHeight(),
-       is_top = touch <= current && $('.overlay')[0].scrollTop === 0,
-       is_bottom = touch >= current && $('.overlay')[0].scrollHeight - $('.overlay')[0].scrollTop === height;
-       if(is_top || is_bottom){
-        event.preventDefault();
-       }
-  });
-
+  //スクロール処理
+  curScroll = $(window).scrollTop();
   $('html, body').css('overflow', 'hidden');
   $('.overlay').fadeIn(300);
  });
