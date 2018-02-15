@@ -23,10 +23,24 @@ html::after {
 		border-width: 0 0 15px;
 }
 
+body {
+		background: #f6f6f6;
+		background-image: url(../imgs/bg.png);
+		font-size: 1.6rem;
+		margin: 15px;
+		height: 100%;
+}
+
 body::before {
 		bottom: 0;
 		border-width: 0 15px 0;
 		z-index: -1;
+}
+
+@media (min-width: 800px) {
+		body {
+				margin: 20px;
+		}
 }
 
 @media (min-width: 800px) {
@@ -38,20 +52,6 @@ body::before {
 		}
 		body::before {
 				border-width: 0 20px 0;
-		}
-}
-
-body {
-		background: #f6f6f6;
-		background-image: url(../imgs/bg.png);
-		font-size: 1.6rem;
-		margin: 15px;
-		height: 100%;
-}
-
-@media (min-width: 800px) {
-		body {
-				margin: 20px;
 		}
 }
 
@@ -132,6 +132,16 @@ a.btn:hover {
 		content: '';
 		display: block;
 		clear: both;
+}
+
+br.sp {
+		display: inline;
+}
+
+@media (min-width: 800px) {
+		br.sp {
+				display: none;
+		}
 }
 
 /* Contents */
@@ -301,6 +311,10 @@ footer small {
 		background-color: rgba(0, 0, 0, 0.1);
 		box-sizing: border-box;
 		border: none;
+		-webkit-appearance: none;
+		border-radius: 0;
+		font-size: 1.6rem;
+		font-weight: 300;
 		width: 100%;
 		padding: 14px;
 }
@@ -310,26 +324,27 @@ footer small {
 		box-shadow: 0 0 6px rgba(0, 0, 0, 0.2) inset;
 }
 
-#contact form input.submit, #contact form textarea.submit {
+#contact form input.confirm, #contact form textarea.confirm {
 		background-color: #111;
 		color: #fff;
 		font-size: 1.4rem;
 		font-weight: bold;
 		letter-spacing: 0.8rem;
 		text-indent: 0.8rem;
+		text-transform: uppercase;
 		width: 60%;
 		min-width: 150px;
 		transition: .3s;
 		cursor: pointer;
 }
 
-#contact form input.submit.off, #contact form textarea.submit.off {
+#contact form input.confirm.off, #contact form textarea.confirm.off {
 		background-color: rgba(17, 17, 17, 0.6);
 		cursor: default;
 }
 
-#contact form input.submit:not(.off):hover, #contact form textarea.submit:not(.off):hover {
-		background-color: rgba(17, 17, 17, 0.9);
+#contact form input.confirm:not(.off):hover, #contact form textarea.confirm:not(.off):hover {
+		background-color: rgba(17, 17, 17, 0.8);
 }
 
 #contact form textarea {
@@ -378,4 +393,113 @@ footer small {
 		border-color: rgba(200, 0, 10, 0.8) transparent;
 		border-style: solid;
 		border-width: 6px 6px 0 6px;
+}
+
+.overlay {
+		display: none;
+		position: fixed;
+		top: -10px;
+		right: 0;
+		left: 0;
+		bottom: -10px;
+		background: rgba(0, 0, 0, 0.6);
+		overflow: hidden;
+		overflow-y: auto;
+		z-index: 20;
+		-webkit-overflow-scrolling: touch;
+		backface-visibility: hidden;
+}
+
+.overlay .inner {
+		display: table;
+		width: 100%;
+		height: 100%;
+		padding: 10px 0;
+}
+
+#contactModal {
+		background: #fff;
+		font-size: 1.4rem;
+		width: 90%;
+		min-height: 80%;
+		margin: 30px auto;
+		padding: 10px;
+}
+
+#contactModal p {
+		text-align: center;
+}
+
+#contactModal dl dt {
+		position: relative;
+		color: #555;
+		font-weight: bold;
+		padding: 8px 6px;
+}
+
+#contactModal dl dt::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-bottom: 1px solid #ccc;
+		width: 100%;
+}
+
+#contactModal dl dd {
+		margin: 0;
+		padding: 6px;
+}
+
+#contactModal .formAction {
+		position: relative;
+		text-align: center;
+		margin: 50px auto 20px;
+}
+
+#contactModal .formAction input, #contactModal .formAction #contact form textarea, #contact form #contactModal .formAction textarea {
+		display: inline-block;
+		box-sizing: border-box;
+		-webkit-appearance: none;
+		border: 0;
+		border-radius: 0;
+		letter-spacing: 0.2rem;
+		transition: .3s;
+		cursor: pointer;
+}
+
+#contactModal .formAction input.close, #contactModal .formAction #contact form textarea.close, #contact form #contactModal .formAction textarea.close {
+		position: absolute;
+		color: #999;
+		left: 0;
+		bottom: 5px;
+}
+
+#contactModal .formAction input.close:hover, #contactModal .formAction #contact form textarea.close:hover, #contact form #contactModal .formAction textarea.close:hover {
+		color: #ccc;
+}
+
+#contactModal .formAction input.submit, #contactModal .formAction #contact form textarea.submit, #contact form #contactModal .formAction textarea.submit {
+		background-color: #111;
+		color: #fff;
+		font-size: 1.4rem;
+		font-weight: bold;
+		letter-spacing: 0.8rem;
+		text-indent: 0.8rem;
+		text-transform: uppercase;
+		width: 40%;
+		padding: 14px;
+}
+
+#contactModal .formAction input.submit:hover, #contactModal .formAction #contact form textarea.submit:hover, #contact form #contactModal .formAction textarea.submit:hover {
+		background-color: rgba(17, 17, 17, 0.8);
+}
+
+@media (min-width: 800px) {
+		#contactModal {
+				width: 60%;
+				max-width: 800px;
+				padding: 20px 30px;
+		}
 }

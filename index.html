@@ -2,8 +2,10 @@
 <html>
 <head>
  <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
  <title>Portfolio</title>
  <link rel="stylesheet" href="css/style.css">
+ <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
@@ -70,26 +72,38 @@
    <h2>Contact</h2>
    <form action="#" method="post">
     <dl>
-     <dt>name</dt>
-     <dd><input type="text" name="myname" required></dd>
+     <dt>Name</dt>
+     <dd><input type="text" name="Name" required></dd>
     </dl>
     <dl>
      <dt>Email</dt>
-     <dd><input type="email" name="mail" required></dd>
+     <dd><input type="email" name="Email" required></dd>
     </dl>
     <dl>
      <dt>Message</dt>
-     <dd><textarea name="msg" required></textarea></dd>
+     <dd><textarea name="Message" required></textarea></dd>
     </dl>
     <dl>
-     <input type="submit" class="submit off" value="SEND" disabled>
+     <input type="button" class="confirm off" value="confirm" disabled>
     </dl>
    </form>
+   <div class="overlay">
+    <div class="inner">
+     <div id="contactModal" class="modal">
+      <p>以下の内容でよろしければ<br class="sp">「SUBMIT」ボタンを押してください。</p>
+      <div class="formAction">
+       <input type="button" class="close" value="cancel">
+       <input type="button" class="submit" value="Submit">
+      </div>
+     </div>
+    </div>
+   </div>
   </section>
  </main>
  <footer>
   <p><small>&copy; Shizuka Ogino</small></p>
  </footer>
+ <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
  <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
  <script src="js/script.js"></script>
  <script src="js/form.js"></script>

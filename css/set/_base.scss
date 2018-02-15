@@ -23,11 +23,21 @@ html{
   border-width: 0 0 15px;
  }
 }
-body::before{
- @extend html::before;
- bottom: 0;
- border-width: 0 15px 0;
- z-index: -1;
+body{
+ background:#f6f6f6;
+ background-image: url(../imgs/bg.png);
+ font-size: 1.6rem;
+ margin: 15px;
+ height: 100%;
+ &::before{
+  @extend html::before;
+  bottom: 0;
+  border-width: 0 15px 0;
+  z-index: -1;
+ }
+ @include mq-min($mediaQuery-tb){
+  margin: 20px;
+ }
 }
 @include mq-min($mediaQuery-tb){
  html::before{
@@ -39,16 +49,6 @@ body::before{
  body::before{
   border-width: 0 20px 0;
  };
-}
-body{
- background:#f6f6f6;
- background-image: url(../imgs/bg.png);
- font-size: 1.6rem;
- margin: 15px;
- height: 100%;
- @include mq-min($mediaQuery-tb){
-  margin: 20px;
- }
 }
 .bk-white{
  position: relative;
@@ -116,4 +116,11 @@ a{
  content: '';
  display: block;
  clear: both;
+}
+
+br.sp{
+ display: inline;
+ @include mq-min($mediaQuery-tb){
+  display: none;
+ };
 }
