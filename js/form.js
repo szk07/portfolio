@@ -112,4 +112,8 @@ $(function(){
    sessionStorage.windowPosition = windowPosition;
   });
  }();
+ // 送信完了後のアラート
+ var submitAlert = function(){
+
+ }
 });
