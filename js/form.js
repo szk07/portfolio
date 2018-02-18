@@ -121,6 +121,7 @@ $(function(){
     text: 'お問合せありがとうございました。\n内容を確認し、48時間以内にご連絡いたします。',
     icon: 'success'
    });
+   history.replaceState(null,null,'/');
   }
  }();
 });
