@@ -114,6 +114,13 @@ $(function(){
  }();
  // 送信完了後のアラート
  var submitAlert = function(){
-
- }
+  var submitHash = location.hash;
+  if(submitHash === '#send'){
+   swal({
+    title: 'Message sent!',
+    text: 'お問合せありがとうございました。\n内容を確認し、48時間以内にご連絡いたします。',
+    icon: 'success'
+   });
+  }
+ }();
 });

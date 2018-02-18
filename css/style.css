@@ -481,7 +481,7 @@ footer small {
 }
 
 #contactModal .formAction input.submit, #contactModal .formAction #contact form textarea.submit, #contact form #contactModal .formAction textarea.submit {
-		background-color: #111;
+		background-color: #7cd1f9;
 		color: #fff;
 		font-size: 1.4rem;
 		font-weight: bold;
@@ -490,10 +490,6 @@ footer small {
 		text-transform: uppercase;
 		width: 40%;
 		padding: 14px;
-}
-
-#contactModal .formAction input.submit:hover, #contactModal .formAction #contact form textarea.submit:hover, #contact form #contactModal .formAction textarea.submit:hover {
-		background-color: rgba(17, 17, 17, 0.8);
 }
 
 @media (min-width: 800px) {

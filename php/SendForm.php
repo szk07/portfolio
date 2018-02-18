@@ -32,6 +32,10 @@ Message：\n
 　Email: {$masterMail}\n\n
 ───────────────────────\n
 EOD;
+<<<<<<< HEAD
 $admin = mb_send_mail($to, $subject, $body, $header);
+=======
+// $admin = mb_send_mail($to, $subject, $body, $header);
+>>>>>>> b373378... add: submit後にalertを表示
 header('Location: http://'.$_SERVER['HTTP_HOST'].'/#send');
 ?>
