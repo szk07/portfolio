@@ -10,8 +10,8 @@ try{
  $db = connect();
  $sql = 'INSERT INTO ContactForm(Name, Email, Message, time)
                 VALUES (:name, :mail, :msg, NOW())';
- $sth = $db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
- $sth->execute(array(':name' => $name, ':mail' => $to, ':msg' => $msg));
+ $stmt = $db->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_SCROLL));
+ $stmt->execute(array(':name' => $name, ':mail' => $to, ':msg' => $msg));
  $db = NULL;
 }catch(PDOException $e){
  exit("エラーが発生しました。：{$e->getMessage()}");
