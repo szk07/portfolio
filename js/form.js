@@ -118,7 +118,7 @@ $(function(){
   if(submitHash === '#send'){
    swal({
     title: 'Message sent!',
-    text: 'お問合せありがとうございました。\n内容を確認し、48時間以内にご連絡いたします。',
+    text: 'お問合せありがとうございます。\nメールアドレスに確認メールをお送りしました。',
     icon: 'success'
    });
    history.replaceState(null,null,'/');

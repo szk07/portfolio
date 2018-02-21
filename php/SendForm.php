@@ -3,7 +3,7 @@ require_once 'Connect.php';
 require_once 'Escape.php';
 
 $name = es($_POST['Name']);
-$msg = es($_POST['Message']);
+$msg = preg_replace('/\n/', "<br>", $_POST['Message']);
 $to = es($_POST['Email']);
 
 try{
