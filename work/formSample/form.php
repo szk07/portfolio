@@ -7,65 +7,8 @@
  <title>メールフォームサンプル｜Portfolio</title>
  <link rel="canonical" href="/">
  <link rel="stylesheet" href="../../css/style.css">
+ <link rel="stylesheet" href="form.css">
  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
- <style media="screen">
-  #contact{
-   border-top: 0px;
-  }
-  p{
-   text-align: center;
-   margin: 10px 0 20px;
-  }
-  form p{
-   text-align: left;
-   font-size: 1.4rem;
-  }
-  .red{
-   color: red;
-  }
-  .hr{
-   border-top: 1px solid #ccc;
-   margin: 30px 0 0;
-   padding: 20px 0;
-  }
-  .mt10, #contact dd.mt10{
-   margin-top: 10px;
-  }
-  input[type=radio]{
-   display: none;
-  }
-  input[type=radio] + label{
-   position: relative;
-   font-size: 1.6rem;
-   margin-right: 20px;
-   padding-left: 20px;
-  }
-  input[type=radio] + label::before{
-   content: '';
-   display: block;
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 15px;
-   height: 15px;
-   border: 1px solid #999;
-   border-radius: 50%;
-  }
-  input[type=radio]:checked + label{
-   color: #42A5F5;
-  }
-  input[type=radio]:checked + label::after{
-   content: '';
-   display: block;
-   position: absolute;
-   top: 3px;
-   left: 3px;
-   width: 11px;
-   height: 11px;
-   background: #42a5f5;
-   border-radius: 50%;
-  }
- </style>
  </head>
  <body>
   <main>
@@ -88,17 +31,29 @@
       <dt>Message <span class="red">*</span></dt>
       <dd><textarea name="Message" required></textarea></dd>
      </dl>
-     <p class="hr">よろしければお答えください。（※項目サンプル）</p>
+     <p class="hr txt-l">よろしければお答えください。（※項目サンプル）</p>
      <dl>
-      <dt>Gender</dt>
-      <dd class="mt10">
+      <dt>性別</dt>
+      <dd>
        <input type="radio" name="gen" id="gen01" value="男"><label for="gen01">男性</label>
        <input type="radio" name="gen" id="gen02" value="女"><label for="gen02">女性</label>
        <input type="radio" name="gen" id="gen03" value="他"><label for="gen03">その他</label>
       </dd>
      </dl>
      <dl>
-      <input type="button" class="confirm off" value="confirm" disabled>
+      <dt>お好きな鳥（複数可）</dt>
+      <dd>
+       <?php
+       $bard = ['すずめ','はと','にわとり','インコ','フクロウ','文鳥'];
+       for($i=0; $i<count($bard); $i++){
+        print "<input type='checkbox' name='bard' id='bard{$i}' value='{$bard[$i]}'><label for='bard{$i}'>{$bard[$i]}</label>";
+       }
+       ?>
+      </dd>
+     </dl>
+     <p class="mt20">ご回答ありがとうございました。</p>
+     <dl>
+      <input type="button" class="confirm off" value="確認" disabled>
      </dl>
     </form>
     <div class="overlay">
