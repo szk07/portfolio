@@ -15,6 +15,11 @@ form p{
  text-align: left;
 }
 .red{
+ display: inline;
+ color: red;
+}
+#contact span.red::after{
+ display: inline;
  color: red;
 }
 .hr{

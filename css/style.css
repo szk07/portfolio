@@ -374,7 +374,7 @@ footer small {
 		box-shadow: 0 0 6px rgba(200, 0, 10, 0.2) inset;
 }
 
-#contact .error span {
+#contact .error span.er {
 		display: none;
 		position: absolute;
 		right: 12px;
@@ -385,7 +385,7 @@ footer small {
 		z-index: 1;
 }
 
-#contact .error span::after {
+#contact .error span.er::after {
 		content: '';
 		position: absolute;
 		right: 30px;

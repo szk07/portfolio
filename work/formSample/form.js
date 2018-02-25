@@ -36,18 +36,18 @@ $(function(){
   }
  });
 
- //formArea処理
+ //エラー表示処理
  function addError($dl, ms){
   $dl.addClass('error');
-  $dl.find('span').remove();
-  $dl.find('dt').append('<span>'+ms+'</span>')
-  $dl.find('span')
+  $dl.find('span.er').remove();
+  $dl.find('dt').append('<span class="er">'+ms+'</span>')
+  $dl.find('span.er')
    .fadeIn(300)
    .animate({bottom:'-8px'}, {duration: 500, queue: false});
  }
  function rmError($dl){
   $dl.removeClass('error');
-  $dl.find('span').remove();
+  $dl.find('span.er').remove();
  }
 
  //confirm処理
@@ -76,6 +76,7 @@ $(function(){
    $('#contactModal .formAction')
     .before('<dl><dt>'+formName+'</dt><dd>'+formVal+'</dd></dl>');
   }
+  alert($('[name=gen]:checked').val());
   //スクロール処理
   $(window).on('touchmove.noscroll', function(event){
    var current_y = event.originalEvent.changedTouches[0].screenY,
