@@ -2,9 +2,9 @@
 require_once '../../php/Connect.php';
 require_once '../../php/Escape.php';
 
-$name = es($_POST['Name']);
-$msg = es($_POST['Message']);
-$to = es($_POST["Email"]);
+$name = es($_POST['name']);
+$msg = es($_POST['meg']);
+$to = es($_POST["mail"]);
 
 try{
  $db = connect();
@@ -17,5 +17,5 @@ try{
  exit("エラーが発生しました。：{$e->getMessage()}");
 }
 
-header('Location: http://'.$_SERVER['HTTP_HOST'].'/work/formSample/form.html#send');
+header('Location: http://'.$_SERVER['HTTP_HOST'].'/work/formSample/form.php#send');
 ?>

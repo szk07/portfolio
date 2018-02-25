@@ -2,9 +2,9 @@
 require_once 'Connect.php';
 require_once 'Escape.php';
 
-$name = es($_POST['Name']);
-$msg = es($_POST['Message']);
-$to = es($_POST['Email']);
+$name = es($_POST['name']);
+$msg = es($_POST['msg']);
+$to = es($_POST['mail']);
 
 try{
  $db = connect();

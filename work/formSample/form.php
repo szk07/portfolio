@@ -21,23 +21,23 @@
     <form action="SendForm.php" method="post">
      <dl>
       <dt>Name <span class="red">*</span></dt>
-      <dd><input type="text" name="Name" required></dd>
+      <dd><input type="text" name="name" required></dd>
      </dl>
      <dl>
       <dt>Email <span class="red">*</span></dt>
-      <dd><input type="email" name="Email" required></dd>
+      <dd><input type="email" name="mail" required></dd>
      </dl>
      <dl>
       <dt>Message <span class="red">*</span></dt>
-      <dd><textarea name="Message" required></textarea></dd>
+      <dd><textarea name="msg" required></textarea></dd>
      </dl>
      <p class="hr txt-l">よろしければお答えください。（※項目サンプル）</p>
      <dl>
       <dt>性別</dt>
       <dd>
-       <input type="radio" name="gen" id="gen01" value="男"><label for="gen01">男性</label>
-       <input type="radio" name="gen" id="gen02" value="女"><label for="gen02">女性</label>
-       <input type="radio" name="gen" id="gen03" value="他"><label for="gen03">その他</label>
+       <input type="radio" name="gen" id="gen01" value="男性"><label for="gen01">男性</label>
+       <input type="radio" name="gen" id="gen02" value="女性"><label for="gen02">女性</label>
+       <input type="radio" name="gen" id="gen03" value="その他"><label for="gen03">その他</label>
       </dd>
      </dl>
      <dl>

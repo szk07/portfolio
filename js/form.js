@@ -1,7 +1,7 @@
 $(function(){
  var formArea = $('#contact input, #contact textarea');
  var formAry;
- var mail = 'Email';
+ var mail = 'mail';
  var mailCheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
  var $confirm = $('input.confirm');
 
@@ -67,15 +67,24 @@ $(function(){
  });
  $('#contact form .confirm').on('click', function(event){
   $('#contactModal').children('dl').remove();
+  formAry = formArea.serializeArray();
   for(var i=0; i<formAry.length; i++){
    var formName = formAry[i]['name'];
    var formVal = formAry[i]['value'];
-   if(formName === 'Message'){
+   if(formName === 'msg'){
     formVal = formVal.replace(/\r?\n/g, '<br>');
    }
-   $('#contactModal .formAction')
-    .before('<dl><dt>'+formName+'</dt><dd>'+formVal+'</dd></dl>');
+   optionCheck(formName, formVal);
   }
+
+  function optionCheck(formName, dd){
+   var parts = formName==='msg' ? 'textarea' : 'input';
+   dt = $(parts+'[name='+formName+']').parents('dl').find('dt').text();
+   if(dd){
+    $('#contactModal .formAction').before('<dl><dt>'+dt+'</dt><dd>'+dd+'</dd></dl>');
+   }
+  }
+
   //スクロール処理
   $(window).on('touchmove.noscroll', function(event){
    var current_y = event.originalEvent.changedTouches[0].screenY,
