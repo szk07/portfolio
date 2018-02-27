@@ -16,6 +16,7 @@
     <h2>Sample Form</h2>
     <p>
      フォームサンプルです。実際に送信する事も可能ですのでお試しください。<br>
+     （※メールは送信されません。）<br>
      <span class="red">*</span>は必須項目です。
     </p>
     <form action="SendForm.php" method="post">
@@ -46,7 +47,7 @@
        <?php
        $bard = ['すずめ','はと','にわとり','インコ','フクロウ','文鳥'];
        for($i=0; $i<count($bard); $i++){
-        print "<input type='checkbox' name='bard' id='bard{$i}' value='{$bard[$i]}'><label for='bard{$i}'>{$bard[$i]}</label>";
+        print "<input type='checkbox' name='bard[]' id='bard{$i}' value='{$bard[$i]}'><label for='bard{$i}'>{$bard[$i]}</label>";
        }
        ?>
       </dd>

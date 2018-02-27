@@ -1,5 +1,5 @@
 $(function(){
- var formArea = $('#contact input, #contact textarea');
+ var formArea = $('#contact form');
  var formAry;
  var mail = 'mail';
  var mailCheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -80,7 +80,7 @@ $(function(){
 
   function optionCheck(formName, dd){
    var parts = formName==='msg' ? 'textarea' : 'input';
-   dt = $(parts+'[name='+formName+']').parents('dl').find('dt').text();
+   dt = $(parts+'[name="'+formName+'"]').parents('dl').find('dt').text();
    if(formAction.prev().find('dt').text() === dt){
     formAction.prev().find('dd').append('、'+dd);
    }else if(dd){

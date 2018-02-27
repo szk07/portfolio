@@ -79,7 +79,7 @@ $(function(){
 
   function optionCheck(formName, dd){
    var parts = formName==='msg' ? 'textarea' : 'input';
-   dt = $(parts+'[name='+formName+']').parents('dl').find('dt').text();
+   dt = $(parts+'[name="'+formName+'"]').parents('dl').find('dt').text();
    if(dd){
     $('#contactModal .formAction').before('<dl><dt>'+dt+'</dt><dd>'+dd+'</dd></dl>');
    }
